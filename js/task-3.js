@@ -5,11 +5,10 @@ const password = prompt("Password");
 
 if (password === ADMIN_PASSWORD) {
   message = "Добро пожаловать!";
-} else {
-  message = "Доступ запрещен, неверный пароль!";
-}
-if (password === null) {
+} else if (password === null) {
   message = "Отменено пользователем!";
+} else if (password !== ADMIN_PASSWORD) {
+  message = "Доступ запрещен, неверный пароль!";
 }
 
 alert(message);
